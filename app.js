@@ -1,8 +1,19 @@
-import React from 'react';
-import ReactDOM  from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
-const heading1=React.createElement('h1',{id:"firstChild"},"Hi1 from React!");
-const heading2=React.createElement('h1',{id:"secondChild"},"Hi2 from React!");
-const headingParent=React.createElement('div',{id:"headingParent"},[heading1,heading2]);
-root.render(headingParent);
+import Header from "./header";
+import Body from "./body";
+import SearchDropdown from "./searchDropdown";
+
+const Page = () => {
+  return (
+    <div className="outer">
+      <Header/>
+      <div>
+        <Body/>
+      </div>
+    </div>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Page />);
