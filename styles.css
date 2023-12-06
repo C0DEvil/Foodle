@@ -31,20 +31,23 @@ body{
     opacity:0.9 ;
     color:white;
     cursor: pointer;
+    scale:1.05;
+    transition: scale 0.15s ease-in-out;
     box-shadow: 3px 3px 5px 2px #333131;
   }
 .headOptions> li:hover .icons{
-    background-color: #FF6347;
     opacity:0.9 ;
     color:white;
     cursor: pointer;
+    scale:1.05;
+    transition: scale 0.15s ease-in-out;
   }
 .body{
-    position: fixed;
+    /* position: fixed;  */
     top:100px;
     right:0;
     /* background-color:red; */
-    height:85vh;
+    /* height:85vh; */
     width:100%;
     z-index: -1;
 }  
@@ -112,3 +115,35 @@ body{
   color:#FF6347;
 }
  
+#carouselCont{
+  display: flex;
+  flex-direction: column;
+  width:80%;
+  margin:auto;
+  overflow: hidden;
+}
+
+#carouselCont>h2{
+  margin-left: 10px;
+  font-family: "Basis Grotesque Pro", Arial, sans-serif;
+  font-weight: 700;
+}
+#carousel{
+  display: flex;
+  /* flex-direction: row; */
+  overflow: scroll;
+  width:100%;
+  margin:auto;
+  flex-wrap: nowrap;
+}
+
+#carousel > img{
+  width:425px;
+  margin:10px;
+}
+
+#carousel > img:hover{
+  scale:1.05;
+  cursor:pointer;
+  transition: scale 0.25s ease-in-out;
+}

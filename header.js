@@ -8,7 +8,7 @@ import { FaHome } from "react-icons/fa";
 
 const Header=()=>{
   return (
-    <div style={{position:'sticky'}}>
+    <div style={{position:'sticky',top:'0'}}>
         <div className="header">
             <img src={companyLogo} alt="Foodel Logo" id="logo" style={{}} />
             <ul className="headOptions">
