@@ -1,6 +1,10 @@
 import React from 'react';
 import companyLogo from "./resources/Foodel.png";
 import SearchDropdown from './searchDropdown';
+import { FaShoppingCart } from "react-icons/fa";
+import { MdPermPhoneMsg } from "react-icons/md";
+import { BsInfoLg } from "react-icons/bs";
+import { FaHome } from "react-icons/fa";
 
 const Header=()=>{
   return (
@@ -8,10 +12,10 @@ const Header=()=>{
         <div className="header">
             <img src={companyLogo} alt="Foodel Logo" id="logo" style={{}} />
             <ul className="headOptions">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
+                <li><FaHome className='icons' style={{scale:'1.2'}}/>Home</li>
+                <li><BsInfoLg className='icons' style={{scale:'1.2',marginRight:'3px'}}/>About</li>
+                <li><MdPermPhoneMsg className='icons'/>Contact</li>
+                <li><FaShoppingCart className='icons'/>Cart</li>
             </ul>
         </div>
         <SearchDropdown style={{zIndex:'10'}}/>
