@@ -10,7 +10,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 1000;
   background-color:  #F5F5F5;
 }
 .headOptions {
@@ -35,6 +35,7 @@ body{
     scale:1.05;
     transition: scale 0.15s ease-in-out;
     box-shadow: 3px 3px 5px 2px #333131;
+    z-index: 5;
   }
 .headOptions> li:hover .icons{
     opacity:0.9 ;
@@ -42,16 +43,8 @@ body{
     cursor: pointer;
     scale:1.05;
     transition: scale 0.15s ease-in-out;
+    z-index: 5  ;
   }
-.body{
-    /* position: fixed;  */
-    top:100px;
-    right:0;
-    /* background-color:red; */
-    /* height:85vh; */
-    width:100%;
-    z-index: -1;
-}  
 /*Search Shutter*/
 /* Shutter.css */
 
@@ -60,7 +53,7 @@ body{
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    z-index: 10;
+    z-index: 9999;
   }
   
   .content {
@@ -151,28 +144,165 @@ body{
 #carousel > img{
   width:425px;
   margin:10px;
+  transition: scale 0.25s ease-in-out;
 }
 
 #carousel > img:hover{
   scale:1.05;
   cursor:pointer;
-  transition: scale 0.25s ease-in-out;
+  z-index: 5;
 }
 #carousel2 > img{
   width:144px;
   height:180px;
   margin:10px;
+  transition: scale 0.25s ease-in-out;
 }
 
 #carousel2 > img:hover{
   scale:1.05;
   cursor:pointer;
-  transition: scale 0.25s ease-in-out;
-} 
-
-hr{
-  width:75%;
-  color:rgb(197, 195, 195);
-  opacity: 0.2;
-  height:1px;
 }
+hr{
+  width:80%;
+  color:#f0f0f5;
+  opacity: 0.2;
+  height:2px;
+  border:0;
+  border-top:2px solid #808080;
+  z-index: 1;
+}
+
+.cardImg{
+  height:300px;
+  width:300px;
+  position: relative;
+  top:-40px;
+  left:-25px;
+  z-index: -1;
+  /* height:180px; */
+}
+
+.food-card{
+  width:330px;
+  height:430px;
+  /* border:1px solid black; */
+  margin:10px;
+  transition: scale 0.3s ease-in-out;
+}
+
+.cardImgOverFlow{
+  width:250px;
+  height:250px;
+  overflow: hidden;
+  border-radius: 250px;
+  margin:auto;
+  /* border: 2px solid blue; */
+  position: relative;
+  top:20px;
+  /* scale:0.8; */
+  z-index: 2;
+}
+
+.card-info{
+  width:320px;
+  height:250px;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  border-radius:15px;
+  margin:auto;
+  position: relative;
+  z-index: -1;
+  top:-105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  /* scale:0.8; */
+}
+
+.cardSecondLine{
+  display: flex;
+  position: relative;
+  top:10px;
+}
+
+.card-info>h3{
+  position: relative;
+  top:32px;
+  margin-left: 10px;
+  font-size: xx-large;
+}
+
+.cardSecondLine>ul {
+  position:relative;
+  top:-17px;
+  left:-20px;
+}
+
+#infoStar
+{
+  color:green;
+  position:relative;
+  left:10px; 
+}
+.cardBottom{
+  position:relative;
+  top:-17px;
+}
+
+.cardInfoText{
+  color: white;
+  font-weight: 500;
+  margin-left:10px;
+  font-size: 17px;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bottomCarousel{
+  display: flex;
+  flex-direction: row;
+  overflow-y:hidden;
+  overflow-x: scroll;
+  width:89%;
+  margin:auto;
+}
+        
+#bottomCarouselOuter{
+  width:75%;
+  margin: auto;;
+}
+#bottomCarouselOuter>h2{
+  margin-left: 10px;
+  font-family: "Basis Grotesque Pro", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.food-card:hover{
+  scale:1.09;
+  cursor:pointer;
+  z-index: 1;
+  /* transform: scale(1.1); */
+}
+
+.cardCuisines{
+  max-width: 300px;
+  /* word-break: break-all; */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.restaurantListOuter{
+  width:75%;
+  margin:auto;
+}
+
+.restaurantList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin:auto;
+}
+
