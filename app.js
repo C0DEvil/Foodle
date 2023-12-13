@@ -8,9 +8,9 @@ import SearchDropdown from "./searchDropdown";
 const Page = () => {
   return (
     <div className="outer">
-      <Header/>
-      <div>
-        <Body/>
+      <Header style={{ zIndex: "1000" }} />
+      <div className="body" style={{ zIndex: "0" }}>
+        <Body />
       </div>
     </div>
   );

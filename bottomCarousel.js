@@ -1,13 +1,32 @@
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
 import FoodCard from "./foodCard.js";
 import largeDataObject from "./swiggyData.js";
+import { useRef, useState } from "react";
 
 const bottomCarouselData=largeDataObject.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
 
 const BottomCarousel=()=>{
+  const [scroller2,setScroller2]=useState(0);
+  const refTwo=useRef();
     return (
         <div id='bottomCarouselOuter'>
-          <h2>{largeDataObject.data.cards[2].card.card.header.title}</h2>
-          <div className="bottomCarousel">
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+            <h2>{largeDataObject.data.cards[2].card.card.header.title}</h2>
+            <div style={{display:'flex'}} className="horizScrollOuter">
+              <HiOutlineArrowSmLeft style={{borderRadius:'50%',margin:'10px'}} onClick={()=>{
+                const newScroll2 = Math.max(0,scroller2 - 700);
+                setScroller2(newScroll2);
+                if(refTwo.current)refTwo.current.scrollLeft = newScroll2;}}
+              className="horizScroll"/>
+              <HiOutlineArrowSmRight style={{borderRadius:'50%',margin:'10px'}} onClick={()=>{
+                console.log(refTwo.current);
+                const newScroll2 = Math.min(refTwo.current.scrollLeftMax,scroller2 + 700);
+                setScroller2(newScroll2);
+                if(refTwo.current)refTwo.current.scrollLeft = newScroll2;}}
+              className="horizScroll"/>
+            </div>
+          </div>
+          <div className="bottomCarousel" ref={refTwo}>
             {bottomCarouselData.map(item =>{
                 return <FoodCard key={item.info.id} foodCardData={item} />
             })}

@@ -6,11 +6,20 @@ body{
   width: 200px;
   margin:0 5px;
 }
+
+.body{
+  z-index: 0;
+  /* position: relative;  */
+  /* top:1000px; */
+  margin-top: 120px;
+}
 .header {
   display: flex;
   justify-content: space-between;
+  top:0;
+  color: red;
   align-items: center;
-  z-index: 1000;
+  z-index: 100;
   background-color:  #F5F5F5;
 }
 .headOptions {
@@ -125,8 +134,8 @@ body{
 }
 #carousel{
   display: flex;
-  /* flex-direction: row; */
   overflow: scroll;
+  scroll-behavior: smooth ;
   width:100%;
   margin:auto;
   flex-wrap: nowrap;
@@ -139,6 +148,7 @@ body{
   width:100%;
   margin:auto;
   flex-wrap: nowrap;
+  scroll-behavior: smooth;
 }
 
 #carousel > img{
@@ -150,7 +160,7 @@ body{
 #carousel > img:hover{
   scale:1.05;
   cursor:pointer;
-  z-index: 5;
+  z-index:1;
 }
 #carousel2 > img{
   width:144px;
@@ -165,12 +175,11 @@ body{
 }
 hr{
   width:80%;
-  color:#f0f0f5;
   opacity: 0.2;
   height:2px;
   border:0;
-  border-top:2px solid #808080;
-  z-index: 1;
+  border-top:2px solid #FF6347;
+  z-index: -1;
 }
 
 .cardImg{
@@ -267,6 +276,7 @@ hr{
   overflow-x: scroll;
   width:89%;
   margin:auto;
+  scroll-behavior: smooth;
 }
         
 #bottomCarouselOuter{
@@ -306,3 +316,22 @@ hr{
   margin:auto;
 }
 
+.horizScroll{
+  color: #FF6347;
+  scale:1.7;
+  transition: all 0.1s ease-in-out;
+}
+.horizScroll:hover{
+  cursor:pointer;
+  scale:2;
+  background-color: #FF6347;
+  color: white;
+  /* transition: all 0.1s ease-in-out; */
+}
+
+.horizScroll:active{
+  scale:1.7;
+  cursor:pointer;
+  background-color: #FF6347;
+  color:white;
+}
