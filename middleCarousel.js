@@ -1,6 +1,7 @@
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
 import largeDataObject from "./swiggyData.js";
 import { useRef, useState } from "react";
+import {MIDDLE_CAROUSEL_IMG} from "./constants.js"
 
 const carousel2Data=largeDataObject.data.cards[1].card.card.imageGridCards.info;
 
@@ -26,7 +27,7 @@ const MiddleCarousel=()=>{
             {
                 carousel2Data.map((item)=>{
                     return(
-                        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/"+item.imageId} key={item.id} className='carousel2Img'/>
+                        <img src={MIDDLE_CAROUSEL_IMG+item.imageId} key={item.id} className='carousel2Img'/>
                     );
                 })
             }
