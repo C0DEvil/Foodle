@@ -141,9 +141,9 @@ body{
   flex-wrap: nowrap;
 }
 
-#carousel2{
+.carousel2{
   display: flex;
-  /* flex-direction: row; */
+  justify-content: center;
   overflow: scroll;
   width:100%;
   margin:auto;
@@ -162,14 +162,14 @@ body{
   cursor:pointer;
   z-index:1;
 }
-#carousel2 > img{
+.carousel2 > img{
   width:144px;
   height:180px;
   margin:10px;
   transition: scale 0.25s ease-in-out;
 }
 
-#carousel2 > img:hover{
+.carousel2 > img:hover{
   scale:1.05;
   cursor:pointer;
 }
@@ -334,4 +334,34 @@ hr{
   cursor:pointer;
   background-color: #FF6347;
   color:white;
+}
+
+#topCarouselLoader{
+  height:45vh;
+  background-color:#171a29;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items:center;
+}
+
+.midCarouselShim{
+  width:144px;
+  height:180px;
+  margin:40px;
+  background: linear-gradient(-45deg, #5b5b5b 25%, #d2d0d0 50%, #858484 75%);
+  background-size: 200% 100%;
+  animation: shimmerAndScale 1.5s infinite alternate;
+  border-radius:15px;
+}
+ 
+ @keyframes shimmerAndScale {
+  0%, 100% {
+    background-position: -200% 0;
+    transform: scale(1);
+  }
+  50% {
+    background-position: 200% 0;
+    transform: scale(1.1);
+  }
 }

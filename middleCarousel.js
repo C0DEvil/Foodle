@@ -1,14 +1,21 @@
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
 import largeDataObject from "./swiggyData.js";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {MIDDLE_CAROUSEL_IMG} from "./constants.js"
+import MiddleShimmer from "./middleShimmer.js";
 
 const carousel2Data=largeDataObject.data.cards[1].card.card.imageGridCards.info;
 
 const MiddleCarousel=()=>{
     const [scroller3,setScroller3]=useState(0);
     const refThree=useRef();
-    return (
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      // Simulating a delay for demonstration purposes
+      const timeout = setTimeout(() => setLoading(false), 2000);
+      return () => clearTimeout(timeout);
+    }, []);
+    return loading?<MiddleShimmer/>:(
         <div id='carouselCont'>
          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
           <h2>{largeDataObject.data.cards[1].card.card.header.title}</h2>
@@ -23,7 +30,7 @@ const MiddleCarousel=()=>{
                 if(refThree.current)refThree.current.scrollLeft = newScroll3;}} className="horizScroll"/>
            </div>
          </div>
-         <div id='carousel2' ref={refThree}>
+         <div className='carousel2' ref={refThree}>
             {
                 carousel2Data.map((item)=>{
                     return(
