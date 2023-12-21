@@ -1,11 +1,12 @@
 import { MdStars } from "react-icons/md";
+import { FOOD_CARD_IMG } from "./constants";
 
 
 const FoodCard=({foodCardData})=>{
     return (
         <div className="food-card">
               <div className="cardImgOverFlow">
-                    <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+foodCardData?.info?.cloudinaryImageId} id={foodCardData?.info?.id} className='cardImg'/>
+                    <img src={FOOD_CARD_IMG+foodCardData?.info?.cloudinaryImageId} id={foodCardData?.info?.id} className='cardImg'/>
               </div>
               <div className='card-info'>
                     <h3 className='cardInfoText'>{foodCardData?.info?.name}</h3>

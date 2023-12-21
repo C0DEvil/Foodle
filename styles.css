@@ -36,6 +36,14 @@ body{
   padding:15px 12px;
   border-radius: 15px; 
 }
+.headOptions >li >a{
+  text-decoration: none;
+  color:black;
+}
+.headOptions>li> a:hover{
+  text-decoration: none;
+  color:white;
+}
 .headOptions> li:hover {
     background-color: #FF6347;
     opacity:0.9 ;
@@ -46,7 +54,7 @@ body{
     box-shadow: 3px 3px 5px 2px #333131;
     z-index: 5;
   }
-.headOptions> li:hover .icons{
+.headOptions> li:hover .icons {
     opacity:0.9 ;
     color:white;
     cursor: pointer;
@@ -63,6 +71,7 @@ body{
     align-items: center;
     overflow: hidden;
     z-index: 9999;
+    pointer-events: none;
   }
   
   .content {
@@ -82,6 +91,7 @@ body{
   .toggle-button {
     padding: 10px;
     cursor: pointer;
+    pointer-events: all;
   }
 /*Shutter functionality over*/
 .search{
@@ -143,7 +153,7 @@ body{
 
 .carousel2{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   overflow: scroll;
   width:100%;
   margin:auto;
@@ -162,7 +172,7 @@ body{
   cursor:pointer;
   z-index:1;
 }
-.carousel2 > img{
+.carousel2Img{
   width:144px;
   height:180px;
   margin:10px;
@@ -320,12 +330,14 @@ hr{
   color: #FF6347;
   scale:1.7;
   transition: all 0.1s ease-in-out;
+  z-index: 100;
 }
 .horizScroll:hover{
   cursor:pointer;
   scale:2;
   background-color: #FF6347;
   color: white;
+  z-index: 100;
   /* transition: all 0.1s ease-in-out; */
 }
 
@@ -362,6 +374,61 @@ hr{
   }
   50% {
     background-position: 200% 0;
+    transform: scale(1.1);
+  }
+}
+
+.carousel21{
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  width:100%;
+  margin:auto;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin: 25vh auto; */
+  height: 100vh;
+  /* width:40vw; */
+  /* margin: auto; */
+  background-color: #ded0bd; 
+  color: #654321; 
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 3px 4px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+#error-page>h1 {
+  font-size: 3em;
+  color: #e44d26; 
+}
+#error-page>p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#error-page>p>i {
+  color: #8cc63f; 
+}
+
+.kitten-image {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-top: 20px;
+  animation: scaleAnimation 1.5s infinite alternate;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
     transform: scale(1.1);
   }
 }

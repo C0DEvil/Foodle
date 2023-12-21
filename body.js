@@ -4,7 +4,7 @@ import MiddleCarousel from './middleCarousel.js'
 import BottomCarousel from './bottomCarousel.js'
 import RestaurantList from './restaurantList.js'
 
-const Body = () => {
+const Body = ({searchResults}) => {
   return (
     <div className="body">
       <TopCarousel/>
@@ -13,7 +13,7 @@ const Body = () => {
       <hr></hr>
       <BottomCarousel/>
       <hr></hr>
-      <RestaurantList/>
+      <RestaurantList searchResults={searchResults}/>
     </div>
   )
 }
