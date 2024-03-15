@@ -1,13 +1,13 @@
-body{
-    margin:0;
-    padding:0;
+body {
+  margin: 0;
+  padding: 0;
 }
 #logo {
   width: 200px;
-  margin:0 5px;
+  margin: 0 5px;
 }
 
-.body{
+.body {
   z-index: 0;
   /* position: relative;  */
   /* top:1000px; */
@@ -16,11 +16,11 @@ body{
 .header {
   display: flex;
   justify-content: space-between;
-  top:0;
+  top: 0;
   color: red;
   align-items: center;
   z-index: 100;
-  background-color:  #F5F5F5;
+  background-color: #f5f5f5;
 }
 .headOptions {
   display: flex;
@@ -30,208 +30,208 @@ body{
 }
 .headOptions > li {
   list-style-type: none;
-  color:  #181a1b;
+  color: #181a1b;
   font-size: larger;
-  margin:2px;
-  padding:15px 12px;
-  border-radius: 15px; 
+  margin: 2px;
+  padding: 15px 12px;
+  border-radius: 15px;
 }
-.headOptions >li >a{
+.headOptions > li > a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
-.headOptions>li> a:hover{
+.headOptions > li > a:hover {
   text-decoration: none;
-  color:white;
+  color: white;
 }
-.headOptions> li:hover {
-    background-color: #FF6347;
-    opacity:0.9 ;
-    color:white;
-    cursor: pointer;
-    scale:1.05;
-    transition: scale 0.15s ease-in-out;
-    box-shadow: 3px 3px 5px 2px #333131;
-    z-index: 5;
-  }
-.headOptions> li:hover .icons {
-    opacity:0.9 ;
-    color:white;
-    cursor: pointer;
-    scale:1.05;
-    transition: scale 0.15s ease-in-out;
-    z-index: 5  ;
-  }
+.headOptions > li:hover {
+  background-color: #ff6347;
+  opacity: 0.9;
+  color: white;
+  cursor: pointer;
+  scale: 1.05;
+  transition: scale 0.15s ease-in-out;
+  box-shadow: 3px 3px 5px 2px #333131;
+  z-index: 5;
+}
+.headOptions > li:hover .icons {
+  opacity: 0.9;
+  color: white;
+  cursor: pointer;
+  scale: 1.05;
+  transition: scale 0.15s ease-in-out;
+  z-index: 5;
+}
 /*Search Shutter*/
 /* Shutter.css */
 
 .shutter-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    z-index: 9999;
-    pointer-events: none;
-  }
-  
-  .content {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    /* backdrop-filter: blur(10px); */
-    background-color: #F9BF45 ;
-    padding: 20px;
-    transition: max-height 0.8s ease; 
-  }
-  
-  .shutter-container .content-open {
-    max-height: 592px; 
-  }
-  
-  .toggle-button {
-    padding: 10px;
-    cursor: pointer;
-    pointer-events: all;
-  }
-/*Shutter functionality over*/
-.search{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* height:500px; */
-    /* justify-content: space-evenly; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+  pointer-events: none;
 }
 
-::placeholder{
-  margin:auto;
+.content {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  /* backdrop-filter: blur(10px); */
+  background-color: #f9bf45;
+  padding: 20px;
+  transition: max-height 0.8s ease;
+}
+
+.shutter-container .content-open {
+  max-height: 592px;
+}
+
+.toggle-button {
+  padding: 10px;
+  cursor: pointer;
+  pointer-events: all;
+}
+/*Shutter functionality over*/
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height:500px; */
+  /* justify-content: space-evenly; */
+}
+
+::placeholder {
+  margin: auto;
   text-align: center;
   font-size: larger;
   font-weight: 500;
 }
 
-.full-landing-image> div > input{
-  border:5px solid #FF6347;
+.full-landing-image > div > input {
+  border: 5px solid #ff6347;
 }
 
-.searchInput:focus{
-  outline:none ;
+.searchInput:focus {
+  outline: none;
 }
-.searchInput{
-  opacity:0.9;
+.searchInput {
+  opacity: 0.9;
 }
 
-.full-landing-image> div > button:hover{
-  cursor:pointer;
-} 
-
-.icons{
-  margin-right:10px;
-  color:#FF6347;
+.full-landing-image > div > button:hover {
+  cursor: pointer;
 }
- 
-#carouselCont{
+
+.icons {
+  margin-right: 10px;
+  color: #ff6347;
+}
+
+#carouselCont {
   display: flex;
   flex-direction: column;
-  width:75%;
-  margin:auto;
+  width: 75%;
+  margin: auto;
   overflow: hidden;
 }
 
-#carouselCont>h2{
+#carouselCont > h2 {
   margin-left: 10px;
   font-family: "Basis Grotesque Pro", Arial, sans-serif;
   font-weight: 700;
 }
-#carousel{
+#carousel {
   display: flex;
   overflow: scroll;
-  scroll-behavior: smooth ;
-  width:100%;
-  margin:auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: auto;
   flex-wrap: nowrap;
 }
 
-.carousel2{
+.carousel2 {
   display: flex;
   /* justify-content: center; */
   overflow: scroll;
-  width:100%;
-  margin:auto;
+  width: 100%;
+  margin: auto;
   flex-wrap: nowrap;
   scroll-behavior: smooth;
 }
 
-#carousel > img{
-  width:425px;
-  margin:10px;
+#carousel > img {
+  width: 425px;
+  margin: 10px;
   transition: scale 0.25s ease-in-out;
 }
 
-#carousel > img:hover{
-  scale:1.05;
-  cursor:pointer;
-  z-index:1;
+#carousel > img:hover {
+  scale: 1.05;
+  cursor: pointer;
+  z-index: 1;
 }
-.carousel2Img{
-  width:144px;
-  height:180px;
-  margin:10px;
+.carousel2Img {
+  width: 144px;
+  height: 180px;
+  margin: 10px;
   transition: scale 0.25s ease-in-out;
 }
 
-.carousel2 > img:hover{
-  scale:1.05;
-  cursor:pointer;
+.carousel2 > img:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
-hr{
-  width:80%;
+hr {
+  width: 80%;
   opacity: 0.2;
-  height:2px;
-  border:0;
-  border-top:2px solid #FF6347;
+  height: 2px;
+  border: 0;
+  border-top: 2px solid #ff6347;
   z-index: -1;
 }
 
-.cardImg{
-  height:300px;
-  width:300px;
+.cardImg {
+  height: 300px;
+  width: 300px;
   position: relative;
-  top:-40px;
-  left:-25px;
+  top: -40px;
+  left: -25px;
   z-index: -1;
   /* height:180px; */
 }
 
-.food-card{
-  width:330px;
-  height:430px;
+.food-card {
+  width: 330px;
+  height: 430px;
   /* border:1px solid black; */
-  margin:10px;
+  margin: 10px;
   transition: scale 0.3s ease-in-out;
 }
 
-.cardImgOverFlow{
-  width:250px;
-  height:250px;
+.cardImgOverFlow {
+  width: 250px;
+  height: 250px;
   overflow: hidden;
   border-radius: 250px;
-  margin:auto;
+  margin: auto;
   /* border: 2px solid blue; */
   position: relative;
-  top:20px;
+  top: 20px;
   /* scale:0.8; */
   z-index: 2;
 }
 
-.card-info{
-  width:320px;
-  height:250px;
+.card-info {
+  width: 320px;
+  height: 250px;
   background: linear-gradient(to right, #434343 0%, black 100%);
-  border-radius:15px;
-  margin:auto;
+  border-radius: 15px;
+  margin: auto;
   position: relative;
   z-index: -1;
-  top:-105px;
+  top: -105px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -239,136 +239,136 @@ hr{
   /* scale:0.8; */
 }
 
-.cardSecondLine{
+.cardSecondLine {
   display: flex;
   position: relative;
-  top:10px;
+  top: 10px;
 }
 
-.card-info>h3{
+.card-info > h3 {
   position: relative;
-  top:32px;
+  top: 32px;
   margin-left: 10px;
   font-size: xx-large;
 }
 
-.cardSecondLine>ul {
-  position:relative;
-  top:-17px;
-  left:-20px;
+.cardSecondLine > ul {
+  position: relative;
+  top: -17px;
+  left: -20px;
 }
 
-#infoStar
-{
-  color:green;
-  position:relative;
-  left:10px; 
+#infoStar {
+  color: green;
+  position: relative;
+  left: 10px;
 }
-.cardBottom{
-  position:relative;
-  top:-17px;
+.cardBottom {
+  position: relative;
+  top: -17px;
 }
 
-.cardInfoText{
+.cardInfoText {
   color: white;
   font-weight: 500;
-  margin-left:10px;
+  margin-left: 10px;
   font-size: 17px;
   max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.bottomCarousel{
+.bottomCarousel {
   display: flex;
   flex-direction: row;
-  overflow-y:hidden;
+  overflow-y: hidden;
   overflow-x: scroll;
-  width:89%;
-  margin:auto;
+  width: 89%;
+  margin: auto;
   scroll-behavior: smooth;
 }
-        
-#bottomCarouselOuter{
-  width:75%;
-  margin: auto;;
+
+#bottomCarouselOuter {
+  width: 75%;
+  margin: auto;
 }
-#bottomCarouselOuter>h2{
+#bottomCarouselOuter > h2 {
   margin-left: 10px;
   font-family: "Basis Grotesque Pro", Arial, sans-serif;
   font-weight: 700;
 }
 
-.food-card:hover{
-  scale:1.09;
-  cursor:pointer;
+.food-card:hover {
+  scale: 1.09;
+  cursor: pointer;
   z-index: 1;
   /* transform: scale(1.1); */
 }
 
-.cardCuisines{
+.cardCuisines {
   max-width: 300px;
   /* word-break: break-all; */
   white-space: nowrap;
   overflow: hidden;
 }
 
-.restaurantListOuter{
-  width:75%;
-  margin:auto;
+.restaurantListOuter {
+  width: 75%;
+  margin: auto;
 }
 
-.restaurantList{
+.restaurantList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin:auto;
+  margin: auto;
 }
 
-.horizScroll{
-  color: #FF6347;
-  scale:1.7;
+.horizScroll {
+  color: #ff6347;
+  scale: 1.7;
   transition: all 0.1s ease-in-out;
   z-index: 100;
 }
-.horizScroll:hover{
-  cursor:pointer;
-  scale:2;
-  background-color: #FF6347;
+.horizScroll:hover {
+  cursor: pointer;
+  scale: 2;
+  background-color: #ff6347;
   color: white;
   z-index: 100;
   /* transition: all 0.1s ease-in-out; */
 }
 
-.horizScroll:active{
-  scale:1.7;
-  cursor:pointer;
-  background-color: #FF6347;
-  color:white;
+.horizScroll:active {
+  scale: 1.7;
+  cursor: pointer;
+  background-color: #ff6347;
+  color: white;
 }
 
-#topCarouselLoader{
-  height:45vh;
-  background-color:#171a29;
+#topCarouselLoader {
+  height: 45vh;
+  background-color: #171a29;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 
-.midCarouselShim{
-  width:144px;
-  height:180px;
-  margin:40px;
+.midCarouselShim {
+  width: 144px;
+  height: 180px;
+  margin: 40px;
   background: linear-gradient(-45deg, #5b5b5b 25%, #d2d0d0 50%, #858484 75%);
   background-size: 200% 100%;
   animation: shimmerAndScale 1.5s infinite alternate;
-  border-radius:15px;
+  border-radius: 15px;
 }
- 
- @keyframes shimmerAndScale {
-  0%, 100% {
+
+@keyframes shimmerAndScale {
+  0%,
+  100% {
     background-position: -200% 0;
     transform: scale(1);
   }
@@ -378,12 +378,12 @@ hr{
   }
 }
 
-.carousel21{
+.carousel21 {
   display: flex;
   justify-content: center;
   overflow: scroll;
-  width:100%;
-  margin:auto;
+  width: 100%;
+  margin: auto;
   flex-wrap: nowrap;
   scroll-behavior: smooth;
 }
@@ -397,24 +397,24 @@ hr{
   height: 100vh;
   /* width:40vw; */
   /* margin: auto; */
-  background-color: #ded0bd; 
-  color: #654321; 
-  font-family: 'Roboto', sans-serif;
+  background-color: #ded0bd;
+  color: #654321;
+  font-family: "Roboto", sans-serif;
   box-shadow: 3px 4px 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 20px;
 }
-#error-page>h1 {
+#error-page > h1 {
   font-size: 3em;
-  color: #e44d26; 
+  color: #e44d26;
 }
-#error-page>p {
+#error-page > p {
   font-size: 1.2em;
   margin: 10px 0;
 }
 
-#error-page>p>i {
-  color: #8cc63f; 
+#error-page > p > i {
+  color: #8cc63f;
 }
 
 .kitten-image {
@@ -431,4 +431,20 @@ hr{
   100% {
     transform: scale(1.1);
   }
+}
+
+.Hidden {
+  display: none;
+}
+
+.Show {
+  display: inherit;
+}
+.top-picks-container::-webkit-scrollbar {
+  display: none;
+}
+
+.top-picks-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
