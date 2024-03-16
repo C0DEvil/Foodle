@@ -5,9 +5,11 @@ import { LiaStarSolid } from "react-icons/lia";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 import { CgTimelapse } from "react-icons/cg";
 import { HiOutlineCurrencyRupee } from "react-icons/hi2";
-import OfferCarousel from "./offerCarousel";
 import TopPicksCarousel from "./topPicksCarousel";
 import DropdownMenu from "./remItemsDropdown";
+import { FaCircle } from "react-icons/fa";
+import ReactSwitch from "react-switch";
+import ToggleSwitch from "./toggleSwitch";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -24,6 +26,7 @@ const RestaurantMenu = () => {
 
   console.log(resMenu);
 
+  const handle = () => console.log("toggle switch clicked");
   const remItems =
     resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(
       2,
@@ -174,7 +177,10 @@ const RestaurantMenu = () => {
           }
         </div>
       )}
-      <OfferCarousel resMenu={resMenu} />
+      <label style={{ display: "flex", alignItems: "center" }}>
+        Veg Only
+        <ToggleSwitch />
+      </label>
       <hr></hr>
       {resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
         ?.card?.card?.carousel && (
@@ -210,7 +216,6 @@ const RestaurantMenu = () => {
         </div>
       )}
       <hr></hr>
-      {console.log(remItems)}
       {remItems?.map((itm) => {
         return (
           <div>

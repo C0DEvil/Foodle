@@ -448,3 +448,41 @@ hr {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.slider {
+  width: 63px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggled {
+  background-color: lightgreen;
+}
+
+.slider-ring {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  top: 2px;
+  left: 1px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggled-ring {
+  transform: translateX(30px);
+}
+
+.green-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: green;
+}
