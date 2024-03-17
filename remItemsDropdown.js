@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import SubcategoriesDropdown from "./subCategoriesDropdown";
 import OrderItems from "./orderItems";
 
-const DropdownMenu = ({ item }) => {
+const DropdownMenu = ({ item, veg }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [arr1, setArr1] = useState(item?.card?.card?.itemCards);
+
+  useEffect(() => {
+    if (veg) {
+      const arr = item?.card?.card?.itemCards?.filter(
+        (itemm) => itemm?.card?.info?.itemAttribute?.vegClassifier === "VEG"
+      );
+      setArr1(arr);
+    } else {
+      setArr1(item?.card?.card?.itemCards);
+    }
+  }, [veg]);
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -43,8 +55,7 @@ const DropdownMenu = ({ item }) => {
             }}
           >
             {item.card.card.title}
-            {item.card.card.itemCards &&
-              "(" + item?.card?.card?.itemCards?.length + ")"}
+            {item.card.card.itemCards && "(" + arr1.length + ")"}
           </div>
           <div
             style={{
@@ -57,17 +68,21 @@ const DropdownMenu = ({ item }) => {
         </div>
         {item?.card?.card?.categories && (
           <div>
-            <SubcategoriesDropdown item={item} />
+            <SubcategoriesDropdown item={item} veg={veg} />
           </div>
         )}
       </div>
 
       {/* Dropdown content */}
       {isOpen &&
-        item?.card?.card?.itemCards.map((cuisine) => {
+        arr1.map((cuisine) => {
           return (
             <div>
-              <OrderItems cuisine={cuisine} key={cuisine?.card?.info?.id} />
+              <OrderItems
+                cuisine={cuisine}
+                key={cuisine?.card?.info?.id}
+                veg1={veg}
+              />
               <hr></hr>
             </div>
           );

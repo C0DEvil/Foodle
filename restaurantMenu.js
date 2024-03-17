@@ -7,14 +7,13 @@ import { CgTimelapse } from "react-icons/cg";
 import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import TopPicksCarousel from "./topPicksCarousel";
 import DropdownMenu from "./remItemsDropdown";
-import { FaCircle } from "react-icons/fa";
-import ReactSwitch from "react-switch";
 import ToggleSwitch from "./toggleSwitch";
 import OfferCarousel from "./offerCarousel";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resMenu, setResMenu] = useState(null);
+  const [veg, setVeg] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,9 +24,12 @@ const RestaurantMenu = () => {
     fetchData();
   }, []);
 
-  console.log(resMenu);
+  const handleVeg = () => {
+    setVeg(!veg);
+  };
 
-  const handle = () => console.log("toggle switch clicked");
+  // console.log(resMenu);
+
   const remItems =
     resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(
       2,
@@ -212,7 +214,7 @@ const RestaurantMenu = () => {
         }}
       >
         Veg Only &nbsp;
-        <ToggleSwitch />
+        <ToggleSwitch setVeg={setVeg} />
       </label>
       <hr></hr>
       {resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
@@ -252,7 +254,7 @@ const RestaurantMenu = () => {
       {remItems?.map((itm) => {
         return (
           <div>
-            <DropdownMenu item={itm} />
+            <DropdownMenu item={itm} veg={veg} />
           </div>
         );
       })}

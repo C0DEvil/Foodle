@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DropItDown from "./dropItDown";
 
-const SubcategoriesDropdown = ({ item }) => {
+const SubcategoriesDropdown = ({ item, veg }) => {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const SubcategoriesDropdown = ({ item }) => {
       }}
     >
       {item?.card?.card?.categories?.map((itum) => (
-        <DropItDown itum={itum} key={itum.id} />
+        <DropItDown itum={itum} key={itum.id} veg1={veg} />
       ))}
     </div>
   );

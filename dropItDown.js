@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import OrderItems from "./orderItems";
 
-const DropItDown = ({ itum }) => {
+const DropItDown = ({ itum, veg1 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [arr1, setArr1] = useState(itum?.itemCards);
+
+  useEffect(() => {
+    if (veg1) {
+      const arr = itum?.itemCards?.filter(
+        (itemm) => itemm?.card?.info?.isVeg === 1
+      );
+      setArr1(arr);
+    } else {
+      setArr1(itum.itemCards);
+    }
+  }, [veg1]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -36,8 +48,9 @@ const DropItDown = ({ itum }) => {
           }}
         >
           {itum.title}
-          {itum.itemCards && "(" + itum.itemCards.length + ")"}
+          {itum.itemCards && "(" + arr1.length + ")"}
         </div>
+        {console.log(arr1)}
         <div
           style={{
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
@@ -48,10 +61,14 @@ const DropItDown = ({ itum }) => {
         </div>
       </div>
       {isOpen &&
-        itum.itemCards.map((cuisine) => {
+        arr1.map((cuisine) => {
           return (
             <div>
-              <OrderItems cuisine={cuisine} key={cuisine?.card?.info?.id} />
+              <OrderItems
+                cuisine={cuisine}
+                key={cuisine?.card?.info?.id}
+                veg1={veg1}
+              />
               <hr></hr>
             </div>
           );

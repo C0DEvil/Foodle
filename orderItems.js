@@ -3,7 +3,7 @@ import { DROP_IT_DOWN } from "./constants";
 import veg from "./resources/veg-icon.webp";
 import nonVeg from "./resources/non-veg-icon.webp";
 
-const OrderItems = ({ cuisine }) => {
+const OrderItems = ({ cuisine, veg1 }) => {
   return (
     <div
       className="cuisine-card"

@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const ToggleSwitch = () => {
+const ToggleSwitch = ({ setVeg }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
+
+  useEffect(() => {
+    setVeg(isToggled);
+  });
 
   return (
     <div
