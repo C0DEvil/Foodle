@@ -10,6 +10,7 @@ import DropdownMenu from "./remItemsDropdown";
 import { FaCircle } from "react-icons/fa";
 import ReactSwitch from "react-switch";
 import ToggleSwitch from "./toggleSwitch";
+import OfferCarousel from "./offerCarousel";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -35,9 +36,23 @@ const RestaurantMenu = () => {
     );
 
   return (
-    <div style={{ width: "52%", margin: "auto", border: "1px solid" }}>
+    <div
+      style={{
+        width: "52%",
+        margin: "auto",
+        border: "1px solid",
+        fontSize: "11px",
+      }}
+    >
       <p>
-        Home / {resMenu?.data?.cards[0]?.card?.card?.info?.city} /{" "}
+        <span
+          style={{
+            fontFamily: "ProximaNova, arial, Helvetica Neue, sans-serif",
+            color: "#93959F",
+          }}
+        >
+          Home / {resMenu?.data?.cards[0]?.card?.card?.info?.city} /
+        </span>{" "}
         {resMenu?.data?.cards[0]?.card?.card?.info?.name}
       </p>
       <div
@@ -133,6 +148,14 @@ const RestaurantMenu = () => {
             ? " Show"
             : " Hidden")
         }
+        style={{
+          fontFamily: "ProximaNova, arial, Helvetica Neue, sans-serif",
+          fontSize: "13px",
+          fontWeight: "500",
+          padding: "10px",
+          color: "#93959F",
+          borderTop: "1px solid #E9E9EB",
+        }}
       >
         <MdOutlineDeliveryDining style={{ scale: "1.2", marginRight: "5px" }} />
         {resMenu?.data?.cards[0]?.card?.card?.info?.feeDetails?.message}
@@ -177,8 +200,18 @@ const RestaurantMenu = () => {
           }
         </div>
       )}
-      <label style={{ display: "flex", alignItems: "center" }}>
-        Veg Only
+      <OfferCarousel resMenu={resMenu} />
+      <label
+        style={{
+          margin: "20px",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: " ProximaNova, arial, Helvetica Neue, sans-serif",
+          fontWeight: "600",
+          fontSize: "14px",
+        }}
+      >
+        Veg Only &nbsp;
         <ToggleSwitch />
       </label>
       <hr></hr>
@@ -219,21 +252,7 @@ const RestaurantMenu = () => {
       {remItems?.map((itm) => {
         return (
           <div>
-            <div
-              style={{
-                height: "10px",
-                width: "100%",
-                backgroundColor: "#F1F1F6",
-              }}
-            ></div>
             <DropdownMenu item={itm} />
-            <div
-              style={{
-                height: "10px",
-                width: "100%",
-                backgroundColor: "#F1F1F6",
-              }}
-            ></div>
           </div>
         );
       })}

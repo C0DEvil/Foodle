@@ -12,7 +12,7 @@ const OrderItems = ({ cuisine }) => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        margin: "30px 0",
+        margin: "40px 0",
       }}
     >
       <div className="cuisine-details">

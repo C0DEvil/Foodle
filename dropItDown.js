@@ -27,8 +27,9 @@ const DropItDown = ({ itum }) => {
       >
         <div
           style={{
-            margin: 0,
+            margin: "10px 0",
             fontFamily: "ProximaNova, arial, Helvetica Neue, sans-serif",
+            fontWeight: "500",
             fontSize: "14px",
             textDecoration: "rgb(40, 44, 63)",
             lineHeight: "19px",
@@ -42,8 +43,9 @@ const DropItDown = ({ itum }) => {
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
             zIndex: "2",
           }}
-        ></div>
-        {!itum.categories && <IoIosArrowDown />}
+        >
+          {!itum.categories && <IoIosArrowDown />}
+        </div>
       </div>
       {isOpen &&
         itum.itemCards.map((cuisine) => {

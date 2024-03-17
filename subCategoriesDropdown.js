@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import DropItDown from "./dropItDown";
 
 const SubcategoriesDropdown = ({ item }) => {
@@ -10,6 +9,7 @@ const SubcategoriesDropdown = ({ item }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "start",
+        margin: "10px 0",
       }}
     >
       {item?.card?.card?.categories?.map((itum) => (

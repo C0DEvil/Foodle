@@ -22,6 +22,7 @@ const DropdownMenu = ({ item }) => {
           padding: "10px",
           width: "100%",
           transition: "background-color 0.3s ease",
+          borderTop: "8px solid #f5f2f1",
         }}
         onClick={!item?.card?.card?.categories ? handleToggle : undefined}
       >
@@ -29,14 +30,22 @@ const DropdownMenu = ({ item }) => {
           style={{
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             width: "100%",
           }}
         >
-          <h3 style={{ margin: 0 }}>
+          <div
+            style={{
+              margin: "20px 0",
+              fontFamily: "ProximaNova, arial, Helvetica Neue, sans-serif",
+              fontSize: "16px",
+              fontWeight: "700",
+            }}
+          >
             {item.card.card.title}
             {item.card.card.itemCards &&
               "(" + item?.card?.card?.itemCards?.length + ")"}
-          </h3>
+          </div>
           <div
             style={{
               transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
