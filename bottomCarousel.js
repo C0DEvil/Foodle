@@ -4,6 +4,7 @@ import largeDataObject from "./swiggyData.js";
 import { useEffect, useRef, useState } from "react";
 import MiddleShimmer from "./middleShimmer.js";
 import useSwiggyData from "./scrapedData.js";
+import { Link } from "react-router-dom";
 
 const bottomCarouselData =
   largeDataObject.data.cards[2].card.card.gridElements.infoWithStyle
@@ -57,9 +58,13 @@ const BottomCarousel = () => {
         </div>
       </div>
       <div className="bottomCarousel" ref={refTwo}>
-        {json?.data?.cards[1]?.card.card.gridElements.infoWithStyle.restaurants.map(
+        {json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map(
           (item) => {
-            return <FoodCard key={item.info.id} foodCardData={item} />;
+            return (
+              <Link key={item.info.id} to={`/restaurant/${item?.info?.id}`} style={{ textDecoration: "none" }}>
+                <FoodCard key={item?.info?.id} foodCardData={item} />
+              </Link>
+            );
           }
         )}
       </div>

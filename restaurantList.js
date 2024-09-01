@@ -24,7 +24,11 @@ const RestaurantList = ({ searchResults }) => {
           json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
             (item) => {
               return (
-                <Link key={item.info.id} to={`/restaurant/${item.info.id}`}>
+                <Link
+                  key={item.info.id}
+                  to={`/restaurant/${item?.info?.id}`}
+                  style={{ textDecoration: "none" }}
+                >
                   <FoodCard foodCardData={item} />
                 </Link>
               );

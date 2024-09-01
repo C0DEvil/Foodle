@@ -50,7 +50,7 @@ const DropItDown = ({ itum, veg1 }) => {
           {itum.title}
           {itum.itemCards && "(" + arr1.length + ")"}
         </div>
-        {console.log(arr1)}
+        {/* {console.log(arr1)} */}
         <div
           style={{
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
