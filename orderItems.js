@@ -10,12 +10,12 @@ const OrderItems = ({ cuisine, veg1 }) => {
       style={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
         margin: "40px 0",
       }}
     >
-      <div className="cuisine-details">
+      <div className="cuisine-details" >
         <img
           src={`${
             cuisine?.card?.info?.itemAttribute?.vegClassifier == "NONVEG"
@@ -58,11 +58,13 @@ const OrderItems = ({ cuisine, veg1 }) => {
           alignItems: "center",
         }}
       >
-        <img
-          src={DROP_IT_DOWN + cuisine?.card?.info?.imageId}
-          alt={cuisine?.info?.name}
-          style={{ width: "200px", borderRadius: "10px" }}
-        />
+        {cuisine?.card?.info?.imageId && (
+          <img
+            src={DROP_IT_DOWN + cuisine?.card?.info?.imageId}
+            alt={cuisine?.info?.name}
+            style={{ width: "200px", borderRadius: "10px" }}
+          />
+        )}
         <button
           style={{
             height: "35px",

@@ -4,6 +4,7 @@ import MiddleCarousel from './middleCarousel.js'
 import BottomCarousel from './bottomCarousel.js'
 import RestaurantList from './restaurantList.js'
 
+
 const Body = ({searchResults}) => {
   return (
     <div className="body">

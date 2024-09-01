@@ -9,13 +9,19 @@ import Contact from "./contact";
 import About from "./about";
 import Cart from "./cart";
 import RestaurantMenu from "./restaurantMenu.js";
+import useSwiggyData from "./scrapedData.js";
 
-const temp =
-  largeDataObject.data.cards[5].card.card.gridElements.infoWithStyle
-    .restaurants;
+let temp =
+  largeDataObject?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+    ?.restaurants;
 
-const Page = (search) => {
-  const [searchResults, setSearchResults] = useState(search);
+const Page = () => {
+  const [dat, setDat, json] = useSwiggyData();
+
+  const [searchResults, setSearchResults] = useState(
+    json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  );
+
   return (
     <div className="outer">
       <Header style={{ zIndex: "1000" }} setSearchResults={setSearchResults} />
@@ -29,7 +35,7 @@ const Page = (search) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Page search={temp} />,
+    element: <Page />,
     children: [
       {
         path: "home",

@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const call = await fetch(HOTEL_MENU_1 + id + HOTEL_MENU_2);
+      const call = await fetch(`${HOTEL_MENU_1}${id}${HOTEL_MENU_2}`);
       const data = await call.json();
       setResMenu(data);
     };
@@ -31,9 +31,9 @@ const RestaurantMenu = () => {
   // console.log(resMenu);
 
   const remItems =
-    resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(
+    resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(
       2,
-      resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+      resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
         .length - 2
     );
 
@@ -53,9 +53,9 @@ const RestaurantMenu = () => {
             color: "#93959F",
           }}
         >
-          Home / {resMenu?.data?.cards[0]?.card?.card?.info?.city} /
+          Home / {resMenu?.data?.cards[2]?.card?.card?.info?.city} /
         </span>{" "}
-        {resMenu?.data?.cards[0]?.card?.card?.info?.name}
+        {resMenu?.data?.cards[2]?.card?.card?.info?.name}
       </p>
       <div
         className="menuTop"
@@ -73,7 +73,7 @@ const RestaurantMenu = () => {
               color: "282C3F",
             }}
           >
-            {resMenu?.data?.cards[0]?.card?.card?.info?.name}
+            {resMenu?.data?.cards[2]?.card?.card?.info?.name}
           </h2>
           <p
             style={{
@@ -83,7 +83,7 @@ const RestaurantMenu = () => {
               fontSize: "13px",
             }}
           >
-            {resMenu?.data?.cards[0]?.card?.card?.info?.cuisines.join(",")}
+            {resMenu?.data?.cards[2]?.card?.card?.info?.cuisines.join(",")}
           </p>
           <p
             style={{
@@ -93,8 +93,8 @@ const RestaurantMenu = () => {
               fontSize: "13px",
             }}
           >
-            {resMenu?.data?.cards[0]?.card?.card?.info?.areaName},
-            {resMenu?.data?.cards[0]?.card?.card?.info?.sla?.lastMileTravel} km
+            {resMenu?.data?.cards[2]?.card?.card?.info?.areaName},
+            {resMenu?.data?.cards[2]?.card?.card?.info?.sla?.lastMileTravel} km
           </p>
         </div>
         <div
@@ -125,7 +125,7 @@ const RestaurantMenu = () => {
                 top: "2px",
               }}
             >
-              {resMenu?.data?.cards[0]?.card?.card?.info?.avgRatingString}
+              {resMenu?.data?.cards[2]?.card?.card?.info?.avgRatingString}
             </p>
           </div>
           <p
@@ -139,14 +139,14 @@ const RestaurantMenu = () => {
               borderTop: "1px solid #E9E9EB",
             }}
           >
-            {resMenu?.data?.cards[0]?.card?.card?.info?.totalRatingsString}
+            {resMenu?.data?.cards[2]?.card?.card?.info?.totalRatingsString}
           </p>
         </div>
       </div>
       <div
         className={
           "deliveryMessage" +
-          (resMenu?.data?.cards[0]?.card?.card?.info?.feeDetails?.message
+          (resMenu?.data?.cards[2]?.card?.card?.info?.feeDetails?.message
             ? " Show"
             : " Hidden")
         }
@@ -160,7 +160,7 @@ const RestaurantMenu = () => {
         }}
       >
         <MdOutlineDeliveryDining style={{ scale: "1.2", marginRight: "5px" }} />
-        {resMenu?.data?.cards[0]?.card?.card?.info?.feeDetails?.message}
+        {resMenu?.data?.cards[2]?.card?.card?.info?.feeDetails?.message}
       </div>
       <hr></hr>
       <div
@@ -173,15 +173,15 @@ const RestaurantMenu = () => {
         }}
       >
         <CgTimelapse style={{ scale: "1.4", margin: "0 5px 0 15px" }} />
-        {resMenu?.data?.cards[0]?.card?.card?.info?.availability?.opened
-          ? resMenu?.data?.cards[0]?.card?.card?.info?.sla?.slaString
+        {resMenu?.data?.cards[2]?.card?.card?.info?.availability?.opened
+          ? resMenu?.data?.cards[2]?.card?.card?.info?.sla?.slaString
           : "Closed Currently"}
         <HiOutlineCurrencyRupee
           style={{ scale: "1.4", margin: "0 5px 0 20px" }}
         />
-        {resMenu?.data?.cards[0]?.card?.card?.info?.costForTwoMessage}
+        {resMenu?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}
       </div>
-      {resMenu?.data?.cards[0]?.card?.card?.info?.availability
+      {resMenu?.data?.cards[2]?.card?.card?.info?.availability
         ?.nextOpenTimeMessage && (
         <div
           style={{
@@ -197,7 +197,7 @@ const RestaurantMenu = () => {
           }}
         >
           {
-            resMenu?.data?.cards[0]?.card?.card?.info?.availability
+            resMenu?.data?.cards[2]?.card?.card?.info?.availability
               ?.nextOpenTimeMessage
           }
         </div>
@@ -217,7 +217,7 @@ const RestaurantMenu = () => {
         <ToggleSwitch setVeg={setVeg} />
       </label>
       <hr></hr>
-      {resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+      {resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
         ?.card?.card?.carousel && (
         <h2
           style={{
@@ -229,7 +229,7 @@ const RestaurantMenu = () => {
           Top Picks
         </h2>
       )}
-      {resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+      {resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
         ?.card?.card?.carousel && (
         <div
           className="top-picks-container"
@@ -243,7 +243,7 @@ const RestaurantMenu = () => {
             margin: "-110px 0",
           }}
         >
-          {resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel?.map(
+          {resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel?.map(
             (item) => {
               return <TopPicksCarousel item={item} key={item.bannerId} />;
             }
